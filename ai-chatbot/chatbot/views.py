@@ -3,8 +3,12 @@ from django.http import JsonResponse
 from django.contrib import auth
 from django.contrib.auth.models import User
 import openai
+import os
+from dotenv import load_dotenv
 
-openai_api_key = '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'
+load_dotenv()
+
+openai_api_key = os.getenv('OPENAI_API_KEY')
 
 openai.api_key = openai_api_key
 
